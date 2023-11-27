@@ -2,6 +2,10 @@
 // Skriv klart funktionen calculateTotalPrice2 som tar en array med produkter
 // och ett objekt med priser som input och returnerar det totala priset
 
+/* Shopping cart with separate prices (3p)
+// Finish writing the function calculateTotalPrice2 which takes an array of products
+// and an object with prices as input and returns the total price */
+
 const modelPrices = {
   EOS_70D: 100,
   D3400: 120,
@@ -19,7 +23,18 @@ const shoppingCart = [
 ];
 
 function calculateTotalPrice2(shoppingCart, prices) {
-  // Din kod här
+  let=totalPrice = 0;
+  for (let i=0; i<shoppingCart.length; i++){
+    const item = shoppingCart[i];
+    const model = item.model;
+
+    if (prices.hasOwnProperty(model)) {
+      totalPrice += prices[model];
+    }
+  }
+  return totalPrice;
 }
 
 console.log(calculateTotalPrice2(shoppingCart, modelPrices)); // Ska logga 550
+
+

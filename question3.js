@@ -13,9 +13,15 @@ const products2 = [
   { name: "Drone", brand: "GoPro", model: "Karma", price: 200 },
 ];
 
-function calculateTotalPrice(shoppingCart) {
-  // Din kod här
+function calculateTotalPrice(numbers) {
+  let sum=0;
+  for(let i=0; i<numbers.length; i++){
+    sum+= numbers[i].price;
+  }
+  return sum;
 }
 
 console.log(calculateTotalPrice(products)); // Ska logga 220
 console.log(calculateTotalPrice(products2)); // Ska logga 330
+
+

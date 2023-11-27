@@ -19,12 +19,25 @@ function sortArray(arr) {
 }
 
 function isEven(num) {
-  return num % 2 == 0;
+  return num % 2 === 0;
+  
 }
 
 function median(arr) {
-  //Din kod här
+  const sortedArray = sortArray(arr);
+
+  const length = sortedArray.length;
+  if (isEven(length)) {
+    const middle1 = sortedArray[length / 2];
+    const middle2 = sortedArray[length / 2 - 1];
+    return (middle1 + middle2) / 2;
+  } else {
+    return sortedArray[(length - 1) / 2];
+  }
 }
+
 
 console.log(median([1, 5, 7, 23, 120])); // ska logga 7
 console.log(median([1, 5, 10, 33])); // ska logga 7.5
+
+
